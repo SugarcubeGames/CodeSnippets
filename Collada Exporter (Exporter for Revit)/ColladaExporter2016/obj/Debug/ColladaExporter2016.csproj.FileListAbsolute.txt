@@ -1,0 +1,5 @@
+D:\Revit Addins\ColladaExporter2016\ColladaExporter2016\bin\Debug\ColladaExporter2016.dll
+D:\Revit Addins\ColladaExporter2016\ColladaExporter2016\bin\Debug\ColladaExporter2016.pdb
+D:\Revit Addins\ColladaExporter2016\ColladaExporter2016\obj\Debug\ColladaExporter2016.dll
+D:\Revit Addins\ColladaExporter2016\ColladaExporter2016\obj\Debug\ColladaExporter2016.pdb
+D:\Revit Addins\ColladaExporter2016\ColladaExporter2016\obj\Debug\ColladaExporter2016.csprojResolveAssemblyReference.cache
