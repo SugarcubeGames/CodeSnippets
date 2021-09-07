@@ -6,7 +6,7 @@ Code Snippets from various projects
 ### Project Explanations
 **Blue Square Interactive**
 
-Toolkit built to make implementation and navigation of models in VR.  This includes bouth Oculus Touch and LeapMotion movement controls.
+Toolkit built to make development and navigation of models in VR easier.  This includes bouth Oculus Touch and LeapMotion movement controls.
 Other code bits:
 * Material switching system to change the visible appearance of objects while in the VR experience.
 * Real-Time, area-based reflection probe system that tracks the player to ensure accurate reflections.
