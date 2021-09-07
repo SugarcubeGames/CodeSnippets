@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7E6B2A3B-64F3-441C-AD42-67ABBF98D194}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>interARCHtEditorScripts</RootNamespace>
+    <AssemblyName>interARCHtEditorScripts</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="UnityEditor">
+      <HintPath>..\..\..\..\PlayOnLinux%27s virtual drives\Untity3D\drive_c\Program Files\Unity\Editor\Data\Managed\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\PlayOnLinux%27s virtual drives\Untity3D\drive_c\Program Files\Unity\Editor\Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Systems\Collider\ColliderSystem.cs" />
+    <Compile Include="Systems\DesignOptions\DOWindow.cs" />
+    <Compile Include="Systems\FeaturePoint\FPWindow.cs" />
+    <Compile Include="Systems\MaterialOptions\MOWindow.cs" />
+    <Compile Include="Systems\MaterialOptions\MOGUIManager.cs" />
+    <Compile Include="Systems\MaterialOptions\MOGUISingle.cs" />
+    <Compile Include="Systems\MaterialOptions\MOGUIGroup.cs" />
+    <Compile Include="Systems\Selection\SLWindow.cs" />
+    <Compile Include="Systems\Selection\SLTools.cs" />
+    <Compile Include="Systems\Elevator\ELWindow.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\interARCHt\interARCHt.csproj">
+      <Project>{1A313CF8-F904-4617-A28B-7F3CDD730EE3}</Project>
+      <Name>interARCHt</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Systems\" />
+    <Folder Include="Systems\Collider\" />
+    <Folder Include="Systems\DesignOptions\" />
+    <Folder Include="Systems\Elevator\" />
+    <Folder Include="Systems\FeaturePoint\" />
+    <Folder Include="Systems\MaterialOptions\" />
+    <Folder Include="Systems\Selection\" />
+    <Folder Include="Systems\SaveLoad\" />
+  </ItemGroup>
+</Project>

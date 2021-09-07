@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1A313CF8-F904-4617-A28B-7F3CDD730EE3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>interARCHt</RootNamespace>
+    <AssemblyName>interARCHt</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Testing|AnyCPU' ">
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\interARCHt\Assets\interARCHt</OutputPath>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="UnityEditor">
+      <HintPath>..\..\..\..\PlayOnLinux%27s virtual drives\Untity3D\drive_c\Program Files\Unity\Editor\Data\Managed\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\PlayOnLinux%27s virtual drives\Untity3D\drive_c\Program Files\Unity\Editor\Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Systems\MaterialOptions\MOManager.cs" />
+    <Compile Include="Systems\MaterialOptions\MOSingle.cs" />
+    <Compile Include="Systems\MaterialOptions\MOSingleObj.cs" />
+    <Compile Include="Systems\MaterialOptions\MOGroup.cs" />
+    <Compile Include="Systems\MaterialOptions\MOGroupObj.cs" />
+    <Compile Include="Systems\FeaturePoint\FPManager.cs" />
+    <Compile Include="Systems\FeaturePoint\FPScr.cs" />
+    <Compile Include="Systems\GUI\GUI_interARCHt.cs" />
+    <Compile Include="Systems\GUI\GUI_MO.cs" />
+    <Compile Include="Systems\GUI\GUI_FP.cs" />
+    <Compile Include="Systems\Elevator\ELScr.cs" />
+    <Compile Include="Camera\MouseLook.cs" />
+    <Compile Include="Camera\ByOther\CharacterMotor.cs" />
+    <Compile Include="Camera\ByOther\FPSInputController.cs" />
+    <Compile Include="Camera\ByOther\PlatformInputController.cs" />
+    <Compile Include="Camera\ByOther\RunAndCrouch.cs" />
+    <Compile Include="Camera\ByOther\credit.cs" />
+    <Compile Include="Systems\DesignOptions\DOManager.cs" />
+    <Compile Include="Systems\DesignOptions\DOScr.cs" />
+    <Compile Include="Systems\DesignOptions\DOSubOption.cs" />
+    <Compile Include="Systems\GUI\GUI_DO.cs" />
+    <Compile Include="Systems\GUI\CoroutineHandler.cs" />
+    <Compile Include="Systems\Selection\SLManager.cs" />
+    <Compile Include="Systems\Selection\SLGroup.cs" />
+    <Compile Include="Systems\Scene.cs" />
+    <Compile Include="Systems\Elevator\ELManager.cs" />
+    <Compile Include="Systems\SaveLoad\SaveLoad.cs" />
+    <Compile Include="Systems\SaveLoad\AssetManager.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Systems\" />
+    <Folder Include="Systems\MaterialOptions\" />
+    <Folder Include="Systems\FeaturePoint\" />
+    <Folder Include="Systems\GUI\" />
+    <Folder Include="Systems\Elevator\" />
+    <Folder Include="Camera\" />
+    <Folder Include="Camera\ByOther\" />
+    <Folder Include="Systems\DesignOptions\" />
+    <Folder Include="Systems\Selection\" />
+    <Folder Include="Systems\SaveLoad\" />
+  </ItemGroup>
+</Project>

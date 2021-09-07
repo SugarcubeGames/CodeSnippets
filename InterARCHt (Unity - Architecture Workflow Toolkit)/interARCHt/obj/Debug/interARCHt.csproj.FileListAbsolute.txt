@@ -1,0 +1,15 @@
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHt\bin\Debug\interARCHt.dll
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHt\bin\Debug\interARCHt.pdb
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHt\bin\Debug\mscorlib.dll
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHt\bin\Debug\Mono.Cecil.dll
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHt\bin\Debug\nunit.framework.dll
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHt\bin\Debug\Unity.DataContract.dll
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHt\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHt\bin\Debug\normidna.nlp
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHt\bin\Debug\normnfc.nlp
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHt\bin\Debug\normnfd.nlp
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHt\bin\Debug\normnfkc.nlp
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHt\bin\Debug\normnfkd.nlp
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHt\obj\Debug\interARCHt.csprojResolveAssemblyReference.cache
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHt\obj\Debug\interARCHt.dll
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHt\obj\Debug\interARCHt.pdb

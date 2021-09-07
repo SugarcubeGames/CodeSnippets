@@ -1,0 +1,20 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="interARCHt/Systems/SaveLoad/SaveLoad.cs">
+    <Files>
+      <File FileName="interARCHt/Systems/Scene.cs" Line="36" Column="54" />
+      <File FileName="interARCHt/Systems/SaveLoad/SaveLoad.cs" Line="87" Column="6" />
+      <File FileName="interARCHtEditorScripts/Systems/Elevator/ELWindow.cs" Line="9" Column="2" />
+      <File FileName="interARCHt/Systems/Elevator/ELManager.cs" Line="26" Column="32" />
+      <File FileName="interARCHt/Systems/Elevator/ELScr.cs" Line="34" Column="36" />
+      <File FileName="interARCHt/Systems/FeaturePoint/FPManager.cs" Line="1" Column="1" />
+      <File FileName="interARCHt/Systems/FeaturePoint/FPScr.cs" Line="1" Column="1" />
+      <File FileName="interARCHtEditorScripts/Systems/FeaturePoint/FPWindow.cs" Line="1" Column="1" />
+      <File FileName="interARCHt/Systems/SaveLoad/AssetManager.cs" Line="24" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

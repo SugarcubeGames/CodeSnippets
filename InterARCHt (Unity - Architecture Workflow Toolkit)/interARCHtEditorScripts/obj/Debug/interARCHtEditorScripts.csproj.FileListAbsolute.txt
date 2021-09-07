@@ -1,0 +1,17 @@
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHtEditorScripts\bin\Debug\interARCHtEditorScripts.dll
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHtEditorScripts\bin\Debug\interARCHtEditorScripts.pdb
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHtEditorScripts\bin\Debug\interARCHt.dll
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHtEditorScripts\bin\Debug\mscorlib.dll
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHtEditorScripts\bin\Debug\Mono.Cecil.dll
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHtEditorScripts\bin\Debug\nunit.framework.dll
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHtEditorScripts\bin\Debug\Unity.DataContract.dll
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHtEditorScripts\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHtEditorScripts\bin\Debug\interARCHt.pdb
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHtEditorScripts\bin\Debug\normidna.nlp
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHtEditorScripts\bin\Debug\normnfc.nlp
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHtEditorScripts\bin\Debug\normnfd.nlp
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHtEditorScripts\bin\Debug\normnfkc.nlp
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHtEditorScripts\bin\Debug\normnfkd.nlp
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHtEditorScripts\obj\Debug\interARCHtEditorScripts.csprojResolveAssemblyReference.cache
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHtEditorScripts\obj\Debug\interARCHtEditorScripts.dll
+C:\Users\Patrick\Documents\InterARCHtCode\interARCHt\interARCHtEditorScripts\obj\Debug\interARCHtEditorScripts.pdb
