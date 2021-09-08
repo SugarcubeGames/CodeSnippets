@@ -26,7 +26,7 @@ It also contains a Readme for the I3 Test project that acts as a simple API Docu
 
 **I3 Test**
 
-This code is from a 2-D coding charette I did as part of an interview process in late 2016.  Applicants had to create a system for showcasing individual parts of a provided car model, ideally creating a reusable system that is easy to implement and update.
+This code is from a two day coding charette I did as part of an interview process.  Applicants had to create a system for showcasing individual parts of a provided car model, ideally creating a reusable system that is easy to implement and update.
 My system includes:
 * Procedural part list generation based on in-scene object tagging
 * Information display (Name only, but easily expandable) using a per-part iformation component that is access during runtime.
