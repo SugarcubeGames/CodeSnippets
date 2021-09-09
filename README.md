@@ -34,7 +34,7 @@ A random dungeon generator I'm working on for D&D-style RPGs.  Mainly just a fun
 This code is from a two day coding charette I did as part of an interview process.  Applicants had to create a system for showcasing individual parts of a provided car model, ideally creating a reusable system that is easy to implement and update.
 My system includes:
 * Procedural part list generation based on in-scene object tagging
-* Information display (Name only, but easily expandable) using a per-part iformation component that is access during runtime.
+* Information display (Name only, but easily expandable) using a per-part information component that is access during runtime.
 * Editor tool for easy camera-position setting and updating to allow easy control of presentation.
 * Full documentation in a readme file that lists what all prefabs, scripts, etc. are for and how to use them.
 
