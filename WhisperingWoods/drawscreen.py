@@ -60,7 +60,7 @@ def drawmap(screen, w, h, val, mapArray):
     
     #Since there are only eight circles surrouding this, there are only four points that
     #need to be calculated which comprise combinations of positive and negative values
-    #for two numbers
+    #for two numbers.  Calculation moved to vals
     mox = val.mapOffsetX
     moy = val.mapOffsetY
     #Same logic for the lines between points
@@ -76,36 +76,19 @@ def drawmap(screen, w, h, val, mapArray):
     #Center
     pygame.draw.circle(screen,micc,(x,y),micr,t,True,True,True,True)
     
-    if mapArray[0]:
-        drawMapPoint(screen,mocc,x,y,mocr,0,-mor,tk,(x,y-micr),(x,y-(mor-mocr)))
-    if mapArray[1]:
-        drawMapPoint(screen,mocc,x,y,mocr,mox,-moy,tk,(x+mciox,y-mcioy),(x+mcoox, y-mcooy))
-    if mapArray[2]:
-        drawMapPoint(screen,mocc,x,y,mocr,mor,0,tk,(x+micr,y),(x+(mor-mocr),y))
-    if mapArray[3]:
-        drawMapPoint(screen,mocc,x,y,mocr,mox,moy,tk,(x+mciox,y+mcioy),(x+mcoox, y+mcooy))
-    if mapArray[4]:
-        drawMapPoint(screen,mocc,x,y,mocr,0,mor,tk,(x,y+micr),(x,y+(mor-mocr)))
-    if mapArray[5]:
-        drawMapPoint(screen,mocc,x,y,mocr,-mox,moy,tk,(x-mciox,y+mcioy),(x-mcoox, y+mcooy))
-    if mapArray[6]:
-        drawMapPoint(screen,mocc,x,y,mocr,-mor,0,tk,(x-micr,y),(x-(mor-mocr),y))
-    if mapArray[7]:
-        drawMapPoint(screen,mocc,x,y,mocr,-mox,-moy,tk,(x-mciox,y-mcioy),(x-mcoox, y-mcooy))
-
-    
-#lst: Line start tuple
-#let: Line end tuple
-def drawMapPoint(screen,color,x,y,mocr,mox,moy,tk,lst,let):
-    pygame.draw.circle(screen,color,(x+mox,y+moy),mocr,tk,True,True,True,True)
-    pygame.draw.line(screen,color,lst,let,tk)
+    for i in range(0,8):
+        if mapArray[i]:
+            drawMapPoint(screen,mocc,val.mapPointCenters[i],val.mapPointLinePos[i],mocr,t)
+                         
+def drawMapPoint(screen,color,pos,lineends,mocr,tk):
+    pygame.draw.circle(screen,color,pos,mocr,tk,True,True,True,True)
+    pygame.draw.line(screen,color,lineends[0],lineends[1],tk)
     
 def drawTimeCounter(screen,color,player,sun,moon,sunrise,moonrise,timearrow):
     nt = 9 #Number of tics
     tl = 304 #Total length of the time bar
     ih = 507 #Icon Height
-    #screen.blit(sun,(22,ih))
-    #screen.blit(moon,(272,ih))
+
     sx = 28
     lts = tl/nt #Large (hour) tic separation (in pixels)
     lth = 15 #Large tic height
@@ -148,19 +131,14 @@ def drawTimeIcons(screen, sx, lts, ih, icon1, icon2):
 def drawCurrentTime(screen, sx, sts, to, timearrow):
     screen.blit(timearrow, ((sx-4)+(sts*to),512))
     
-#draw text to the bottom box
+#draw text to the narrative box
 def drawNarrativeText(screen, string, rect, font,color):
-    #textRect = tx.get_rect(center=rect.center)
-    #screen.blit(tx,textRect)
-    
     #Attempting to implement multiline text function found:
     #https://stackoverflow.com/questions/42014195/rendering-text-with-multiple-lines-in-pygame
     words=[word.split(' ') for word in string.splitlines()]
     space=font.size(' ')[0]
     maxWidth = rect.width-48
-    maxHeight = rect.height
     x = rect.x+24
-    y = rect.y+8
     lines = []
     curLine = -1
     lineHeight = 0
@@ -174,25 +152,22 @@ def drawNarrativeText(screen, string, rect, font,color):
                 lineHeight = word_height
             if (x+word_width)-(rect.x+24) > maxWidth:
                 x = rect.x + 24
-                #y += word_height
                 curLine+=1
                 lines.append("")
-            #screen.blit(word_surface,(x,y))
             x += word_width+space
             lines[curLine] += word + " "
         x=rect.x+24
-        #y+=word_height
     firstLineY = 0
     numLines=len(lines)
     #Determine if there's an even or odd number of lines
     if len(lines)%2 == 0:
-        firstLineY = rect.center[1]-((numLines/2)*lineHeight)
+        firstLineY = rect.center[1]-((numLines/2)*lineHeight-12)
     else:
-        firstLineY = rect.center[1]-((((numLines-1)/2)*lineHeight)-(lineHeight/2))
+        firstLineY = rect.center[1]-((((numLines-1)/2)*lineHeight)+(lineHeight/2)-12)
     
     for line in lines:
         tx = font.render(line,True,color)
-        textrect = tx.get_rect(center=(rect.center[0],firstLineY))
-        screen.blit(tx,textrect)
+        textRect = tx.get_rect(center=(rect.center[0],firstLineY))
+        screen.blit(tx,textRect)
         
-        firstLineY+=lineHeight
+        firstLineY+=lineHeight 
