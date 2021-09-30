@@ -18,7 +18,8 @@ class vals:
     mapConnectorOuterOffsetY = 0.0
     mapInnerCircleColor = (255,255,255)
     mapOuterCircleColor = (65,32,140)
-    mapConnectorCenterPointValues=[(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0)]
+    mapPointCenters=[(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0)]
+    mapPointLinePos=[[(0,0),(0,0)],[(0,0),(0,0)],[(0,0),(0,0)],[(0,0),(0,0)],[(0,0),(0,0)],[(0,0),(0,0)],[(0,0),(0,0)],[(0,0),(0,0)]]
     
     boardLineColor = (109,108,112)
     boardTextColor = (146,144,150)
@@ -52,13 +53,31 @@ class vals:
         y2=y1*2
         
         #Build a list of center points for the map points.  Useful for image placement
-        self.mapConnectorCenterPointValues[0] = (x2,y1-self.mapOrbitRadius)
-        self.mapConnectorCenterPointValues[1] = (x2+self.mapOffsetX, y1-self.mapOffsetY)
-        self.mapConnectorCenterPointValues[2] = (x2+self.mapOrbitRadius,y1)
-        self.mapConnectorCenterPointValues[3] = (x2+self.mapOffsetX, y1+self.mapOffsetY)
-        self.mapConnectorCenterPointValues[4] = (x2,y1+self.mapOrbitRadius)
-        self.mapConnectorCenterPointValues[5] = (x2-self.mapOffsetX, y1+self.mapOffsetY)
-        self.mapConnectorCenterPointValues[6] = (x2-self.mapOrbitRadius,y1)
-        self.mapConnectorCenterPointValues[7] = (x2-self.mapOffsetX, y1-self.mapOffsetY)
+        self.mapPointCenters[0] = (x2,y1-self.mapOrbitRadius)
+        self.mapPointCenters[1] = (x2+self.mapOffsetX, y1-self.mapOffsetY)
+        self.mapPointCenters[2] = (x2+self.mapOrbitRadius,y1)
+        self.mapPointCenters[3] = (x2+self.mapOffsetX, y1+self.mapOffsetY)
+        self.mapPointCenters[4] = (x2,y1+self.mapOrbitRadius)
+        self.mapPointCenters[5] = (x2-self.mapOffsetX, y1+self.mapOffsetY)
+        self.mapPointCenters[6] = (x2-self.mapOrbitRadius,y1)
+        self.mapPointCenters[7] = (x2-self.mapOffsetX, y1-self.mapOffsetY)
+        
+        #Build a list of line endpoints for the connector lines
+        self.mapPointLinePos[0] = [(x2,y1-self.mapInnerCircleRadius),
+                                   (x2,y1-(self.mapOrbitRadius-self.mapOuterCircleRadius))]
+        self.mapPointLinePos[1] = [(x2+self.mapConnectorInnerOffsetX,y1-self.mapConnectorInnerOffsetY),
+                                   (x2+self.mapConnectorOuterOffsetX,y1-self.mapConnectorOuterOffsetY)]
+        self.mapPointLinePos[2] = [(x2+self.mapInnerCircleRadius,y1),
+                                   (x2+(self.mapOrbitRadius-self.mapOuterCircleRadius), y1)]
+        self.mapPointLinePos[3] = [(x2+self.mapConnectorInnerOffsetX,y1+self.mapConnectorInnerOffsetY),
+                                   (x2+self.mapConnectorOuterOffsetX,y1+self.mapConnectorOuterOffsetY)]
+        self.mapPointLinePos[4] = [(x2,y1+self.mapInnerCircleRadius),
+                                   (x2,y1+(self.mapOrbitRadius-self.mapOuterCircleRadius))]
+        self.mapPointLinePos[5] = [(x2-self.mapConnectorInnerOffsetX,y1+self.mapConnectorInnerOffsetY),
+                                   (x2-self.mapConnectorOuterOffsetX,y1+self.mapConnectorOuterOffsetY)]
+        self.mapPointLinePos[6] = [(x2-self.mapInnerCircleRadius,y1),
+                                   (x2-(self.mapOrbitRadius-self.mapOuterCircleRadius), y1)]
+        self.mapPointLinePos[7] = [(x2-self.mapConnectorInnerOffsetX,y1-self.mapConnectorInnerOffsetY),
+                                   (x2-self.mapConnectorOuterOffsetX,y1-self.mapConnectorOuterOffsetY)]
         
         self.boardStoryTextRect = pygame.Rect(x1+8, y2+8,(x1*2)-24,y1-24)
