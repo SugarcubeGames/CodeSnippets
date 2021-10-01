@@ -74,4 +74,9 @@ def drawTextArea(screen,rect):
     pygame.draw.line(screen, COL, (rect.x,rect.y+rect.height),(rect.x+rect.width,rect.y+rect.height),1)
     pygame.draw.line(screen, COL, (rect.x,rect.y),(rect.x,rect.y+rect.height),1)
     pygame.draw.line(screen, COL, (rect.x+rect.width,rect.y),(rect.x+rect.width,rect.y+rect.height),1)
-    
+
+def drawTestMovementIcon(screen,val):
+    icon = pygame.image.load("resources/forest.png")
+    for i in range(0,8):
+        pos = val.mapPointCenters[i]
+        screen.blit(icon, (pos[0]-32, pos[1]-32))
