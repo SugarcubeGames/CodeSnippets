@@ -45,13 +45,14 @@ while running:
         screen.fill((0,0,0))
         ds.drawscreenlayout(screen,swidth,sheight,myfont,val)
         
-        dbg.drawTestMovementIcon(screen,val)
+        #dbg.drawTestMovementIcon(screen,val)
         
         pl.updatePlayerStats(screen)
         ds.drawmap(screen,swidth,sheight,val,[1,1,1,1,1,1,1,1])
         ds.drawTimeCounter(screen,(255,255,255),pl,iconSun,iconMoon,iconSunrise,iconMoonrise,iconTimeArrow)
         
-        testString = "Whispering Woods"
+        #testString = "Whispering Woods"
+        testString="I have been lost in these words for three days.  The bells ring out the hour, they are the only respite from the whispers.  The trees fall silent while they chime, all the forest falls silent.  I am getting closer, or they are, our movements don't seem to align.  If I can reach the bells I will be safe..."
         ds.drawNarrativeText(screen, testString, val.boardStoryTextRect, storyFont, val.boardStoryTextColor)
         
         pygame.display.update()
