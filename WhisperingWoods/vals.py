@@ -18,6 +18,7 @@ class vals:
     mapConnectorOuterOffsetY = 0.0
     mapInnerCircleColor = (255,255,255)
     mapOuterCircleColor = (65,32,140)
+    mapOuterCircleHighlightColor = (123,81,219)
     mapPointCenters=[(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0)]
     mapPointLinePos=[[(0,0),(0,0)],[(0,0),(0,0)],[(0,0),(0,0)],[(0,0),(0,0)],[(0,0),(0,0)],[(0,0),(0,0)],[(0,0),(0,0)],[(0,0),(0,0)]]
     
@@ -81,3 +82,4 @@ class vals:
                                    (x2-self.mapConnectorOuterOffsetX,y1-self.mapConnectorOuterOffsetY)]
         
         self.boardStoryTextRect = pygame.Rect(x1+8, y2+8,(x1*2)-24,y1-24)
+
