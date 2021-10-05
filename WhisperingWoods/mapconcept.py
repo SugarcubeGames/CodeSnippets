@@ -31,7 +31,13 @@
 #        and by night the trees are actively attacking you.
 
 #One-Time Locations
+#     These are locations where specific items are obtained to complete the game.  At the very
+#     least a key to the church will be necessary to escape.  There may be multiple end
+#     conditions required to get the good ending and escape.
+#     There will be 'whisper' clues to lead the player towards these.  When you click on a
+#     point and get the context clue it will have unique text to indicate that you're moving
+#     in the direction of one of these areas.  Each time you move closer it increments a counter
+#     that increases the probability of the area showing up on your map.
 #    Rose Garden
-#    Mausoleum
 #    Graveyard
 #    Well

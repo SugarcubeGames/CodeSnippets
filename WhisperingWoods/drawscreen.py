@@ -1,6 +1,7 @@
-import debug as db
 import math
 import pygame
+from mapgen import mapGenerator
+from mapnode import NodeTypes
 
 BCOL = (0,0,0)
 t = 5
@@ -49,40 +50,55 @@ def drawtext(screen, font, COL):
     screen.blit(heattxt, (24,120))
         
 #mapArray is an 8 long bit array that denotes whether or not a map tile should be drawn
-def drawmap(screen, w, h, val, mapArray):
-    x = (math.floor(w/3)*2)
-    y = math.floor(h/3)
+def drawmap(screen, w, h, val, mapArray,mapColorArray,mapTypeArray,mapGen):
+    x = (math.floor(val.screenWidth/3)*2)
+    y = math.floor(val.screenHeight/3)
     
     tk = val.mapLineThickness #Line Thickness
     micr = val.mapInnerCircleRadius #mapInnerCircleRadius
     mocr = val.mapOuterCircleRadius #radius of the outer map circles
-    mor = val.mapOrbitRadius #outer radius of the surrounding map points
-    
-    #Since there are only eight circles surrouding this, there are only four points that
-    #need to be calculated which comprise combinations of positive and negative values
-    #for two numbers.  Calculation moved to vals
-    mox = val.mapOffsetX
-    moy = val.mapOffsetY
-    #Same logic for the lines between points
-    mciox = val.mapConnectorInnerOffsetX #outer offset
-    mcioy = val.mapConnectorInnerOffsetY #outer offset
-    mcoox = val.mapConnectorOuterOffsetX
-    mcooy = val.mapConnectorOuterOffsetY
-    
+
     #Get colors
     micc = val.mapInnerCircleColor
-    mocc = val.mapOuterCircleColor
     
     #Center
     pygame.draw.circle(screen,micc,(x,y),micr,t,True,True,True,True)
     
     for i in range(0,8):
         if mapArray[i]:
-            drawMapPoint(screen,mocc,val.mapPointCenters[i],val.mapPointLinePos[i],mocr,t)
+            drawMapImage(screen,mapGen.getImagePath(mapTypeArray[i]),val.mapPointCenters[i])
+            
+    for i in range(0,8):
+        if mapArray[i]:
+            drawMapPoint(screen,mapColorArray[i],val.mapPointCenters[i],val.mapPointLinePos[i],mocr,tk)
+            
+def drawMap(screen,val,nodeArray):
+    x = (math.floor(val.screenWidth/3)*2)
+    y = math.floor(val.screenHeight/3)
+    
+    tk = val.mapLineThickness #Line Thickness
+    micr = val.mapInnerCircleRadius #mapInnerCircleRadius
+    mocr = val.mapOuterCircleRadius #radius of the outer map circles
+
+    #Get colors
+    micc = val.mapInnerCircleColor
+    
+    #Center
+    pygame.draw.circle(screen,micc,(x,y),micr,t,True,True,True,True)
+    
+    for i in range(0,8):
+        if nodeArray[i].nType != NodeTypes.EMPTY:
+            drawMapImage(screen,nodeArray[i].imagePath,val.mapPointCenters[i])
+            drawMapPoint(screen,nodeArray[i].lineColor,val.mapPointCenters[i],val.mapPointLinePos[i],mocr,tk)
                          
 def drawMapPoint(screen,color,pos,lineends,mocr,tk):
     pygame.draw.circle(screen,color,pos,mocr,tk,True,True,True,True)
     pygame.draw.line(screen,color,lineends[0],lineends[1],tk)
+    
+def drawMapImage(screen,path,pos):
+    #print(path)
+    img = pygame.image.load(path)
+    screen.blit(img, (pos[0]-32, pos[1]-32))
     
 def drawTimeCounter(screen,color,player,sun,moon,sunrise,moonrise,timearrow):
     nt = 9 #Number of tics

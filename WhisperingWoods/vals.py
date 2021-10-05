@@ -1,12 +1,11 @@
 #Constant holder for values
 import math
-import debug as db
 import pygame
 
 class vals:
     screenWidth = 960
     screenHeight = 540
-    mapLineThickness = 3
+    mapLineThickness = 2
     mapInnerCircleRadius = 48
     mapOuterCircleRadius = 32
     mapOrbitRadius = 120
@@ -19,8 +18,9 @@ class vals:
     mapInnerCircleColor = (255,255,255)
     mapOuterCircleColor = (65,32,140)
     mapOuterCircleHighlightColor = (123,81,219)
-    mapPointCenters=[(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0)]
-    mapPointLinePos=[[(0,0),(0,0)],[(0,0),(0,0)],[(0,0),(0,0)],[(0,0),(0,0)],[(0,0),(0,0)],[(0,0),(0,0)],[(0,0),(0,0)],[(0,0),(0,0)]]
+    mapPointCenters=[(0.0,0.0),(0.0,0.0),(0.0,0.0),(0.0,0.0),(0.0,0.0),(0.0,0.0),(0.0,0.0),(0.0,0.0)]
+    mapPointLinePos=[[(0.0,0.0),(0.0,0.0)],[(0.0,0.0),(0.0,0.0)],[(0.0,0.0),(0.0,0.0)],[(0.0,0.0),(0.0,0.0)],
+                     [(0.0,0.0),(0.0,0.0)],[(0.0,0.0),(0.0,0.0)],[(0.0,0.0),(0.0,0.0)],[(0.0,0.0),(0.0,0.0)]]
     
     boardLineColor = (109,108,112)
     boardTextColor = (146,144,150)
@@ -82,4 +82,3 @@ class vals:
                                    (x2-self.mapConnectorOuterOffsetX,y1-self.mapConnectorOuterOffsetY)]
         
         self.boardStoryTextRect = pygame.Rect(x1+8, y2+8,(x1*2)-24,y1-24)
-
