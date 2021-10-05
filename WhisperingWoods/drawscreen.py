@@ -48,30 +48,7 @@ def drawtext(screen, font, COL):
     screen.blit(foodtxt, (24,75))
     heattxt =  font.render("TEMP:", True, COL)
     screen.blit(heattxt, (24,120))
-        
-#mapArray is an 8 long bit array that denotes whether or not a map tile should be drawn
-def drawmap(screen, w, h, val, mapArray,mapColorArray,mapTypeArray,mapGen):
-    x = (math.floor(val.screenWidth/3)*2)
-    y = math.floor(val.screenHeight/3)
-    
-    tk = val.mapLineThickness #Line Thickness
-    micr = val.mapInnerCircleRadius #mapInnerCircleRadius
-    mocr = val.mapOuterCircleRadius #radius of the outer map circles
-
-    #Get colors
-    micc = val.mapInnerCircleColor
-    
-    #Center
-    pygame.draw.circle(screen,micc,(x,y),micr,t,True,True,True,True)
-    
-    for i in range(0,8):
-        if mapArray[i]:
-            drawMapImage(screen,mapGen.getImagePath(mapTypeArray[i]),val.mapPointCenters[i])
-            
-    for i in range(0,8):
-        if mapArray[i]:
-            drawMapPoint(screen,mapColorArray[i],val.mapPointCenters[i],val.mapPointLinePos[i],mocr,tk)
-            
+                  
 def drawMap(screen,val,nodeArray):
     x = (math.floor(val.screenWidth/3)*2)
     y = math.floor(val.screenHeight/3)

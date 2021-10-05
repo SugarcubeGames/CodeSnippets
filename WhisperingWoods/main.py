@@ -40,9 +40,6 @@ screenNeedsUpdate = True
 debugDraw = False
 
 mapg = mapGenerator(seed)
-curMap = [0,0,0,0,0,0,0,0]
-curMapColors = [(0,0,0),(0,0,0),(0,0,0),(0,0,0),(0,0,0),(0,0,0),(0,0,0),(0,0,0)]
-curMapTypes = [0,0,0,0,0,0,0,0]
 mapNodes = []
 
 genNewMap = True;
@@ -62,19 +59,13 @@ while running:
         screenNeedsUpdate = True
         mapReady = False
         while not mapReady:
-            mapData = mapg.genMap(pl.time, 0)
-            curMap = mapData[0]
-            curMapColors = mapData[1]
-            curMapTypes = mapData[2]
-            mapNodes = mapData[3]
+            mapNodes = mapg.genMap(pl.time,0)
             
             #Make sure there are enough rooms.
             nodeCount = 0
             for i in range(0,8):
                 if mapNodes[i].nType != NodeTypes.EMPTY:
                     nodeCount += 1
-#                 if curMap[i]==1:
-#                     nodeCount += 1
             if nodeCount > 2:
                 mapReady = True
         genNewMap = False
@@ -85,11 +76,9 @@ while running:
         ds.drawscreenlayout(screen,swidth,sheight,myfont,val)
         
         pl.updatePlayerStats(screen)
-        #ds.drawmap(screen,swidth,sheight,val,curMap,curMapColors,curMapTypes,mapg)
         ds.drawMap(screen,val,mapNodes)
         ds.drawTimeCounter(screen,(255,255,255),pl,iconSun,iconMoon,iconSunrise,iconMoonrise,iconTimeArrow)
         
-        #testString = "Whispering Woods"
         testString="I have been lost in these woods for three days.  The bells ring out the hour, they are the only respite from the whispers.  The trees fall silent while they chime, all the forest falls silent.  I am getting closer, or they are, I can't tell anymore.  If I can reach the bells I will be safe..."
         ds.drawNarrativeText(screen, testString, val.boardStoryTextRect, storyFont, val.boardStoryTextColor)
         

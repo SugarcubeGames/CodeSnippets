@@ -1,6 +1,7 @@
 from enum import Enum
 
 class NodeTypes(Enum):
+    UNDECIDED = -1
     EMPTY = 0
     PREV = 1 #Previous Direction
     FOREST = 2
@@ -15,7 +16,7 @@ class mapNode:
     
     direction = 0
     prevDirection = 0
-    nType = NodeTypes.EMPTY
+    nType = NodeTypes.UNDECIDED
     pathBase = "resources/_.png"
     imagePath = pathBase.replace("_", "missing")
     lineColor = (255,0,255)
