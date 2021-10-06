@@ -82,3 +82,17 @@ class vals:
                                    (x2-self.mapConnectorOuterOffsetX,y1-self.mapConnectorOuterOffsetY)]
         
         self.boardStoryTextRect = pygame.Rect(x1+8, y2+8,(x1*2)-24,y1-24)
+
+    def setMapCircleColor(self,col, col2):
+        self.mapInnerCircleColor = col
+        self.mapActiveNodeColor = col2
+        
+    def checkButtonClick(self,pos):
+        #Iterate through each map button position and determine
+        #if the click was within that button
+        for i in range(0,8):
+            distX = pos[0] - self.mapPointCenters[i][0]
+            distY = pos[1] - self.mapPointCenters[i][1]
+            if math.hypot(distX,distY)<self.mapOuterCircleRadius:
+                return i
+        return -1

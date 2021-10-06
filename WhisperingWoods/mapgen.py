@@ -2,7 +2,7 @@ import math
 import pygame
 import random
 from mapnode import mapNode
-from mapnode import NodeTypes
+from nodetypes import NodeTypes
 
 class mapGenerator:
     seed = 0
@@ -22,7 +22,7 @@ class mapGenerator:
         self.seed = seed
         random.seed(self.seed)
         
-    def genMap(self, time, previousDir):
+    def genMap(self, time, previousDir, story):
         mapNodes = []
         
         for i in range(0,8):
@@ -32,28 +32,20 @@ class mapGenerator:
             rand = random.randrange(0,100)
             #print(f'{i}: {rand}/{self.nodeProbability}  |  {rand<self.nodeProbability}')
             if rand>self.nodeProbability and i != previousDir:
-                mapNodes[i].setType(NodeTypes.EMPTY)
+                mapNodes[i].setType(NodeTypes.EMPTY,story,0)
         #Determine what sort of tile the the map is.
         for i in range(0,8):
+            storyRand = random.randrange(0,10) #Used to select a 
             if(mapNodes[i].nType != NodeTypes.EMPTY):
                 if i==previousDir:
-                    mapNodes[i].setType(NodeTypes.PREV)
+                    mapNodes[i].setType(NodeTypes.PREV,story,storyRand)
                 else:
                     #For testing, determine if this is forest or path
                     rand = random.randrange(0,100)
                     if(rand<self.nodeProbability*2):
-                        mapNodes[i].setType(NodeTypes.PATH)
+                        mapNodes[i].setType(NodeTypes.PATH,story,storyRand)
+                        #mapNodes[i].setStoryText(story.getPathStory(threat, rand.range(0,10)))
                     else:
-                        mapNodes[i].setType(NodeTypes.FOREST)
+                        mapNodes[i].setType(NodeTypes.FOREST,story,storyRand)
                     
         return mapNodes
-
-    def getImagePath(self,val):
-        if val == 1:
-            return self.imageDenseForest
-        elif val == 2:
-            return self.imageForest
-        elif val == 3:
-            return self.imagePath
-        elif val == 4:
-            return self.imageClearing

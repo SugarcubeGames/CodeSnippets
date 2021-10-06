@@ -1,7 +1,6 @@
 import math
 import pygame
-from mapgen import mapGenerator
-from mapnode import NodeTypes
+from nodetypes import NodeTypes
 
 BCOL = (0,0,0)
 t = 5
@@ -49,7 +48,8 @@ def drawtext(screen, font, COL):
     heattxt =  font.render("TEMP:", True, COL)
     screen.blit(heattxt, (24,120))
                   
-def drawMap(screen,val,nodeArray):
+def drawMap(screen,val,handler):
+    nodeArray = handler.nodes
     x = (math.floor(val.screenWidth/3)*2)
     y = math.floor(val.screenHeight/3)
     
@@ -66,7 +66,11 @@ def drawMap(screen,val,nodeArray):
     for i in range(0,8):
         if nodeArray[i].nType != NodeTypes.EMPTY:
             drawMapImage(screen,nodeArray[i].imagePath,val.mapPointCenters[i])
-            drawMapPoint(screen,nodeArray[i].lineColor,val.mapPointCenters[i],val.mapPointLinePos[i],mocr,tk)
+            if i == handler.activeNode:
+                drawMapPoint(screen,val.mapActiveNodeColor,val.mapPointCenters[i],val.mapPointLinePos[i],mocr,tk)
+            else:
+                drawMapPoint(screen,nodeArray[i].lineColor,val.mapPointCenters[i],val.mapPointLinePos[i],mocr,tk)
+            
                          
 def drawMapPoint(screen,color,pos,lineends,mocr,tk):
     pygame.draw.circle(screen,color,pos,mocr,tk,True,True,True,True)

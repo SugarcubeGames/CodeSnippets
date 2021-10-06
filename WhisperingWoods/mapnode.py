@@ -1,16 +1,5 @@
-from enum import Enum
-
-class NodeTypes(Enum):
-    UNDECIDED = -1
-    EMPTY = 0
-    PREV = 1 #Previous Direction
-    FOREST = 2
-    PATH = 3
-    CLEARING = 4
-    FIREPIT = 5
-    ROSEGARDEN = 20
-    GRAVEYARD = 40
-    WELL = 60
+from storytext import *
+from nodetypes import NodeTypes
 
 class mapNode:
     
@@ -20,6 +9,7 @@ class mapNode:
     pathBase = "resources/_.png"
     imagePath = pathBase.replace("_", "missing")
     lineColor = (255,0,255)
+    story = ""
     
     def __init__(self,d):
         self.direction = d
@@ -32,7 +22,7 @@ class mapNode:
             self.prevDirection = self.direction - 4
             
     
-    def setType(self, nt):
+    def setType(self, nt, storyHandler, rand):
         self.nType = nt
         
         #Set predefined variables based on the node type
@@ -41,12 +31,14 @@ class mapNode:
         elif self.nType == NodeTypes.PREV:
             self.updateImagePath("denseforest")
             self.lineColor = (50,47,56)
+            self.story = storyText.getPreviousDirectionText(NodeTypes.PATH)
         elif self.nType == NodeTypes.FOREST:
             self.updateImagePath("forest")
             self.lineColor = (65,32,140)
         elif self.nType == NodeTypes.PATH:
             self.updateImagePath("path")
             self.lineColor = (145,93,36)
+            self.story = storyHandler.getPathStory(8,rand)
         elif self.nType == NodeTypes.CLEARING:
             self.updateImagePath("clearing")
             self.lineColor = (116,147,161)
@@ -54,6 +46,11 @@ class mapNode:
             self.lineColor = (232,9,9)
         elif self.nType == NodeTypes.GRAVEYARD:
             self.lineColor = (111,127,140)
-            
+        elif self.nType == NodeTypes.CHURCHYARD:
+            self.lineColor = (166,226,237)
+    
+    def setStoryText(s):
+        self.story = s
+        
     def updateImagePath(self, imgName):
         self.imagePath = self.pathBase.replace("_", imgName)
