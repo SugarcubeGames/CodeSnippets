@@ -6,7 +6,11 @@ class StoryText:
     
     pathThreat10 = ["The path is well-worn and quiet.",
                     "The well-lit path looks inviting."]
-    pathThreat20 = ["The path looks clear.  The trees whisper my name..."]
+    pathThreat20 = ["The path looks clear.  I think I hear something in the leaves..."]
+    pathThreat30 = ["The path is scattered with leaves.  I hear whispers in the branches..."]
+    
+    
+    forestThreat10 = ["The forst is still, all I hear is wind in the leaves."]
     
     def __init__(self):
         print("storyText init.  Not sure this should ever display")
